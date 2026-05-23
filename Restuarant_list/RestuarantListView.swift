@@ -14,6 +14,7 @@ struct RestuarantListView: View {
     var image: String
     
    @State var showOptions = false
+   @State var showError = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -49,6 +50,16 @@ struct RestuarantListView: View {
             Button("Mark as favorite"){
                 print("done")
             }
+            Button("Show directions"){
+                self.showError.toggle()
+            }
+        }
+        .alert("Not working", isPresented: $showError) {
+            Button("OK"){
+                //
+            }
+        }message: {
+            Text("Sorry,This feature is not available")
         }
         
     }
