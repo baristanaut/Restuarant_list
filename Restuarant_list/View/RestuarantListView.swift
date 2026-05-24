@@ -82,11 +82,15 @@ struct RestuarantListView: View {
         
     }
 }
-//#Preview {
-//    RestuarantListView(restuarant: "dsd", showOptions: <#T##arg#>, showError: <#T##arg#>
-//        title: "fgfgf",
-//        type: "fgfg",
-//        location: "klkl",
-//        image: "caffee"
-//    )
-//}
+#Preview {
+    @Previewable @State var restuarant = Restuarant(
+        title: "United Coffee",
+        type: .coffeeshop,
+        location: "Baku",
+        image: "business",
+        isFavorite: true,
+        rating: 3
+    )
+    RestuarantListView(restuarant: $restuarant)
+}
+
